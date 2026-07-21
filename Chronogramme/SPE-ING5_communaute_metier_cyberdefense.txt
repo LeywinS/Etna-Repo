@@ -1,0 +1,81 @@
+SPE-ING5 — Retour sur investissement communauté métier
+Communauté métier : CYBERDÉFENSE
+====================================================
+
+
+1. PROJETS & MONTÉE EN COMPÉTENCES TECHNIQUES
+------------------------------------------------
+
+HTB CPTS (Certified Penetration Testing Specialist)
+- Certification hands-on qui valide une compétence technique en pentest à
+  niveau intermédiaire : reconnaissance, exploitation, post-exploitation,
+  mouvement latéral, élévation de privilèges, et rédaction de rapport
+  commercial-grade.
+- Passage obligatoire par le Penetration Tester Job-Role Path (28 modules
+  HTB Academy) avant l'examen : couvre quasi tout le spectre pentest
+  (réseau, Active Directory, web, pivoting, documentation & reporting).
+- Examen : environnement black-box d'entreprise (~8 machines Linux/Windows),
+  plusieurs jours pour compromettre l'infra et rendre un rapport actionnable.
+- [À COMPLÉTER] : dates de début/fin, durée réelle passée dessus, ce qui t'a
+  le plus marqué/challengé (AD ? web ? le rapport ?), pourquoi ce choix par
+  rapport à d'autres certifs (OSCP etc.)
+
+Certification visée : HTB COAE (Certified Offensive AI Expert) — Red Team IA
+- Certification très récente (2026), positionnée sur le red teaming appliqué
+  à l'IA : ML adversarial, empoisonnement de données, attaques d'évasion,
+  exploitation de sorties LLM, prompt injection/jailbreak, confidentialité IA.
+- Fait suite au AI Red Teamer Job-Role Path (12 modules, développé en
+  collaboration avec Google, aligné sur le Secure AI Framework).
+- Examen : engagement pratique de plusieurs jours sur une infrastructure IA
+  complexe, avec rapport technique à la clé.
+- Argument fort pour la soutenance : montre une anticipation de l'évolution
+  du métier (cyber classique + surface d'attaque IA en pleine expansion),
+  cohérent avec la veille perso sur les LLM.
+- [À COMPLÉTER] : pourquoi ce choix précis, ce que tu en attends pour ta
+  suite de carrière
+
+
+2. VEILLE TECHNOLOGIQUE
+------------------------------------------------
+- Blogs et podcasts cyber suivis régulièrement — [À COMPLÉTER : lesquels ?]
+- Newsletters CVE fournies par l'employeur
+- Twitter/X pour l'actu cyber en temps réel (comptes suivis, listes)
+- 
+
+
+3. ÉVÉNEMENTS
+------------------------------------------------
+- CTF en solo actuellement, avec objectif de passer en équipe — bon axe de
+  discours : montre une trajectoire (solo → collectif), typique d'une
+  montée en maturité dans la communauté
+- Perspective pro : plusieurs événements/conférences cyber possibles via le
+  travail
+
+
+4. PARTAGE DE CONNAISSANCES
+------------------------------------------------
+- Une présentation déjà faite sur les différentes techniques utiliser par les attaquants.
+- Axe honnête à assumer en soutenance : c'est le point le plus faible
+  actuellement
+
+
+5. GPE ET RÉSEAU
+------------------------------------------------
+- GPE actuel ne traite pas de cyber — à noter simplement, sans enjoliver
+- Réseau construit via Discord (communautés HTB / candidats à d'autres
+  certifs) : échanges sur objectifs de stage/carrière, retours
+  d'expérience entre candidats
+- Bon point : réseau construit par la pratique plutôt que par obligation
+  scolaire — cohérent avec le thème "communauté métier" demandé par le sujet
+
+
+====================================================
+PROCHAINES ÉTAPES
+====================================================
+1. Compléter les [À COMPLÉTER] ci-dessus (au minimum : blogs/podcasts,
+   présentation déjà faite, dates CPTS)
+2. Faire le lien avec le chronogramme prévisionnel réalisé en début de
+   cursus (demandé explicitement dans les consignes)
+3. Transformer ce texte en script de soutenance minute par minute
+   (15-20 min de présentation orale)
+4. Construire le support de slides (pptx)
