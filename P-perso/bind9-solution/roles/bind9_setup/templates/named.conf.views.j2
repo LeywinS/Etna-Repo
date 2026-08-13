@@ -1,0 +1,16 @@
+// Managed by Ansible — do not edit manually.
+// Order matters: first matching view wins.
+{% for view in bind9_views %}
+view "{{ view.name }}" {
+    match-clients { {{ view.name }}_clients; };
+    recursion no;
+{% for zone in bind9_zones if view.name in zone.views %}
+    zone "{{ zone.name }}" {
+        type primary;
+        file "{{ bind9_zone_root }}/{{ view.name }}/{{ zone.name }}";
+        allow-query { {{ view.name }}_clients; };
+    };
+{% endfor %}
+};
+
+{% endfor %}

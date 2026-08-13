@@ -1,0 +1,12 @@
+$TTL {{ zone.ttl }}
+$ORIGIN {{ zone.name }}.
+@ IN SOA {{ zone.soa.primary }} {{ zone.soa.admin }} (
+    {{ zone.soa.serial }}
+    {{ zone.soa.refresh }}
+    {{ zone.soa.retry }}
+    {{ zone.soa.expire }}
+    {{ zone.soa.minimum }}
+)
+{% for record in zone.views[view].records %}
+{{ record[0] }} IN {{ record[1] }} {{ record[2] }}
+{% endfor %}

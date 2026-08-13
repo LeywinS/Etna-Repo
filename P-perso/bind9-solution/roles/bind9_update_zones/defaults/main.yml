@@ -1,0 +1,7 @@
+---
+bind9_zone_root: /var/cache/bind/primary
+bind9_service_name: bind9
+bind9_user: bind
+bind9_group: bind
+bind9_views: []
+bind9_zones: []

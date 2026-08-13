@@ -1,0 +1,9 @@
+---
+- name: Configure BIND9
+  hosts: bind_servers
+  become: true
+  roles:
+    - role: bind9_setup
+      tags: [bind9, bind9_setup]
+    - role: bind9_update_zones
+      tags: [bind9, bind9_zones]

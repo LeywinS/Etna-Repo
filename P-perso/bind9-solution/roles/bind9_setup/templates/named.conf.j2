@@ -1,0 +1,6 @@
+// Managed by Ansible.
+include "{{ bind9_config_dir }}/named.conf.options";
+include "{{ bind9_config_dir }}/named.conf.logging";
+include "{{ bind9_config_dir }}/named.conf.acl";
+include "{{ bind9_config_dir }}/named.conf.views";
+include "{{ bind9_config_dir }}/named.conf.local";

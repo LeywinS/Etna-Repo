@@ -1,0 +1,10 @@
+---
+- name: Reload bind9
+  ansible.builtin.systemd:
+    name: "{{ bind9_service_name }}"
+    state: reloaded
+
+- name: Restart bind9
+  ansible.builtin.systemd:
+    name: "{{ bind9_service_name }}"
+    state: restarted

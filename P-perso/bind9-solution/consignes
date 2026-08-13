@@ -1,0 +1,26 @@
+# conf
+touch /etc/bind/named.conf.{local,options,acl,logging,views}
+[...]
+named-checkconf /etc/bind/named.conf
+
+# data
+mkdir -p /var/cache/bind/primary/{internal,external,admin}
+touch /var/cache/bind/primary/{internal,external,admin}/example.com
+[...]
+named-checkzone example.com /var/cache/bind/primary/admin/example.com
+named-checkzone example.com /var/cache/bind/primary/internal/example.com
+named-checkzone example.com /var/cache/bind/primary/external/example.com
+
+rndc reload example.com IN admin
+rndc reload example.com IN internal
+rndc reload example.com IN external
+
+
+# Consignes
+1 playbook avec (au moins 2 roles) :
+- un role setup bind9
+- un role manipulation des zones DNS
+
+ça doit être bien modulaire et paramétrable pour que ça puisse être utilisé pour :
+- instancier un DNS from scratch fonctionnel, minimaliste
+- manipuler les zones de n'importe quel DNS existant sachant qu'ils n'auront pas tous les mêmes zones, ni les mêmes views, etc.

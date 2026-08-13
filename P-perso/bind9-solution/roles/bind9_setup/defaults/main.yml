@@ -1,0 +1,22 @@
+---
+bind9_package_name: bind9
+bind9_service_name: bind9
+bind9_config_dir: /etc/bind
+bind9_zone_root: /var/cache/bind/primary
+bind9_log_dir: /var/log/named
+bind9_user: bind
+bind9_group: bind
+
+bind9_listen_ipv4:
+  - any
+bind9_listen_ipv6:
+  - none
+bind9_allow_query:
+  - any
+
+# Structure attendue (voir group_vars) :
+# bind9_views:
+#   - name: internal
+#     match_clients: ["10.10.0.0/16"]
+bind9_views: []
+bind9_zones: []

@@ -1,0 +1,21 @@
+// Managed by Ansible.
+logging {
+    channel default_log {
+        file "/var/log/named/default.log" versions 5 size 10m;
+        severity info;
+        print-time yes;
+        print-category yes;
+        print-severity yes;
+    };
+
+    channel queries_log {
+        file "/var/log/named/queries.log" versions 5 size 10m;
+        severity info;
+        print-time yes;
+        print-category yes;
+        print-severity yes;
+    };
+
+    category default { default_log; };
+    category queries { queries_log; };
+};

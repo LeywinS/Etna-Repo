@@ -1,0 +1,58 @@
+---
+- name: Install BIND9
+  ansible.builtin.apt:
+    name: "{{ bind9_package_name }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Create log directory
+  ansible.builtin.file:
+    path: "{{ bind9_log_dir }}"
+    state: directory
+    owner: "{{ bind9_user }}"
+    group: "{{ bind9_group }}"
+    mode: "0755"
+
+- name: Create primary zone root
+  ansible.builtin.file:
+    path: "{{ bind9_zone_root }}"
+    state: directory
+    owner: "{{ bind9_user }}"
+    group: "{{ bind9_group }}"
+    mode: "0755"
+
+- name: Create one directory per view
+  ansible.builtin.file:
+    path: "{{ bind9_zone_root }}/{{ item }}"
+    state: directory
+    owner: "{{ bind9_user }}"
+    group: "{{ bind9_group }}"
+    mode: "0755"
+  loop: "{{ bind9_views | map(attribute='name') | list }}"
+
+- name: Deploy BIND configuration
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "{{ bind9_config_dir }}/{{ item }}"
+    owner: root
+    group: "{{ bind9_group }}"
+    mode: "0644"
+  loop:
+    - named.conf.options
+    - named.conf.logging
+    - named.conf.acl
+    - named.conf.views
+    - named.conf.local
+    - named.conf
+  notify: Reload bind9
+
+- name: Validate full BIND configuration
+  ansible.builtin.command: named-checkconf {{ bind9_config_dir }}/named.conf
+  changed_when: false
+
+- name: Enable and start BIND9
+  ansible.builtin.systemd:
+    name: "{{ bind9_service_name }}"
+    enabled: true
+    state: started

@@ -1,0 +1,9 @@
+// Managed by Ansible — do not edit manually.
+{% for view in bind9_views %}
+acl "{{ view.name }}_clients" {
+{% for client in view.match_clients %}
+    {{ client }};
+{% endfor %}
+};
+
+{% endfor %}
